@@ -1,22 +1,26 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(1000, 400);
+  frameRate(5);
 
 
 
 
-
-
+  
 }
 
 function draw() {
   background(
-    Math.floor(Math.random() * 10000),
-    Math.floor(Math.random() * 10000),
-    Math.floor(Math.random() * 10000)
-
-
-
+    Math.floor(Math.random() * 255),
+    Math.floor(Math.random() * 255),
+    Math.floor(Math.random() * 255)
 
 
   );
+
+
+
+
+
+
+
 }
