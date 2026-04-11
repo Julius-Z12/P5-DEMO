@@ -1,26 +1,28 @@
+var bouncables = [];
+
 function setup() {
-  createCanvas(1000, 400);
-  frameRate(5);
+    createCanvas(400, 400);
 
+  for (var i = 0; i < 100; i++) {
+    bouncables.push(new Bouncable(
+      color(random(0, 255), random(0, 255), rando (0, 255))
+      random(50, 350), 
+      random(50, 350), 
+      random(5, 50), 
+      random(1, 5), 
+      random(0, 360)
+    ));
 
-
-
-  
+  }
+  console.log(bouncables[0]);
 }
 
 function draw() {
-  background(
-    Math.floor(Math.random() * 255),
-    Math.floor(Math.random() * 255),
-    Math.floor(Math.random() * 255)
+  background(220);
 
+   for (var i = 0; i < bouncables.length; i++) {
+    bouncables[i].draw();
 
-  );
-
-
-
-
-
-
-
+  }
+  
 }
