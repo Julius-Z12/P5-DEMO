@@ -1,10 +1,13 @@
 function projectSelected() {
-    const projectsSelect = document.getElementyById('projects');
+    const projectsSelect = document.getElementById('projects');
 
     if (projectsSelect.value === 'bouncables') {
-        console.log('labas');
-
-
+        setupScript = setupBouncables;
+        drawScript = drawBouncables;
+    } else if (projectsSelect.value === 'flags') {
+        setupScript = function() {};
+        drawScript = drawFlags;
     }
+
     setupScript();
 }
