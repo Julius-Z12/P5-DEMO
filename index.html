@@ -13,15 +13,17 @@
   </head>
 
   <body>
-    <script src="script.js"></script>
-      <script src="bouncables.js"></script>
+    <script src="bouncables.js"></script>
+    <script src="flags.js"></script>
     <script src="sketch.js"></script>
-  
-    <label for="projects"></label>
-    <select id="projects" onchange="projectSelected()">
+    <script src="script.js"></script>
 
-      <option disabled selected></option>>
+    <label for="projects">Select a project:</label>
+
+    <select id="projects" onchange="projectSelected()">
+      <option disabled selected></option>
       <option value="bouncables">Bouncables</option>
+      <option value="flags">Flags</option>
     </select>
   </body>
 </html>
