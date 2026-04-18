@@ -26,7 +26,7 @@ class Bouncable {
 }
 
 var bouncables = [];
-var frequency = 0;
+
 
 function setupBouncables() {
     bouncables.push = [];
