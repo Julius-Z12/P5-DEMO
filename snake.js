@@ -1,6 +1,8 @@
 const cellSize = 50;
 const directionInitial = 'r';
 
+const Body = [];
+
 const snakeHead = {
     cellX: null,
     cellY: null,
@@ -17,6 +19,15 @@ const food = {
     sizeX: cellSize,
     sizeY: cellSize
 };
+
+const snakeTailSegment= {
+    cellX: null,
+    cellY: null,
+    image: null,
+    sizeX: cellSize,
+    sizeY: cellSize
+};
+
 
 function drawHead() {
     angleMode(DEGREES);
@@ -68,7 +79,8 @@ function drawSnake() {
         food.sizeX,
         food.sizeY
     );
-
+    drawTail();
+ 
     if (snakeHead.direction === 'r') {
         snakeHead.cellX += 1;
     } else if (snakeHead.direction === 'l') {
@@ -80,6 +92,29 @@ function drawSnake() {
     }
 
     drawHead();
+
+}
+
+
+function drawTail(){
+    let index = 0
+
+    while (index <= tail.length - 2){
+        tail[index].cellX = tail[index + 1].cellX
+        tail[index].cellY = tail[index + 1].cellY
+    }
+    tail(tail.length - 1).cellX = snakeHead.cellX
+    tail(tail.length - 1).cellY = snakeHead.cellY
+
+    tail.forEach((segment) => {
+        image(
+            Body.image,
+            segment.cellX * cellSize,
+            segment.cellY * cellSize,
+            Body.sizeX,
+            Body.sizeY
+        );
+    });
 }
 
 function keyPressedSnake() {
@@ -113,4 +148,17 @@ function setupSnake() {
     snakeHead.image = loadImage('assets/images/snake-head.png');
     snakeHead.cellX = 2;
     snakeHead.cellY = 2;
+
+    Body.image = loadImage('images/Body.png')
+    
+    Body.length = 0;
+    Body.push({
+        cellX: null,
+        cellY: null
+
+
+    });
+
 }
+
+
