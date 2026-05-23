@@ -6,7 +6,9 @@ var canvasX = 400;
 var canvasY = 400;
 
 function setup() {
-  createCanvas(canvasX, canvasY);
+  var canvas = createCanvas(canvasX, canvasY);
+
+  canvas.parent('p5-canvas');
 }
 
 function draw() {

@@ -2,7 +2,33 @@ html, body {
   margin: 0;
   padding: 0;
 }
+Body {
+  display: flex;
+  height: 100vh;
+
+}
+#p5-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  label {
+    
+    font-size: 30px;
+    margin-top: 20px;
+  }
+  select {
+    width: 100px;
+  }
+}
 
 canvas {
   display: block;
+}
+
+#p5-canavs{
+  margin-top: 20px;
+  
+  
 }
